@@ -1,34 +1,15 @@
 <html>
 <head>
-<a href="index.html">HOME</a>
 </head>
 <h1><center> TRANSPORT MANAGEMENT SYSTEM</center></h1>
 <style type="text/css">
-  body{
-    background-image:url("view.jpg")
-  }
-  a{
-		text-decoration:none;
-		font-weight:bold;
-	}
-  center {
-    background-color: none;
-    margin-top: -53px;
-    color: #27007e;
-}
 h1{
     color:blue;
 	background:lightblue;
 	font-size:50;
    }
-   center {
-    margin-top: -53px;
-}
-a{
-  text-decoration:none;
-}
-body{
-        background-image:view.jpg;
+   body{
+        background-image:a.jpg;
       }
 	  .topnav {
   overflow: hidden;
@@ -36,16 +17,16 @@ body{
 }
 
 .navbar {
-    overflow: hidden;
-    background-color: #000000;
+  overflow: hidden;
+  background-color: #333;
 }
 
 .navbar a {
   float: left;
-  font-size: 20px;
+  font-size: 16px;
   color: white;
   text-align: center;
-  padding: 20px 25px;
+  padding: 14px 16px;
   text-decoration: none;
 }
 
@@ -55,11 +36,11 @@ body{
 }
 
 .dropdown .dropbtn {
-  font-size: 22px;  
+  font-size: 16px;  
   border: none;
   outline: none;
   color: white;
-  padding: 20px 25px;;
+  padding: 14px 16px;
   background-color: inherit;
   font-family: inherit;
   margin: 0;
@@ -100,7 +81,7 @@ body{
    left: 0;
    bottom: 0;
    width: 100%;
-   background-color: black;
+   background-color: blue;
    text-align: center;
    }
    .slide{
@@ -114,8 +95,8 @@ body{
   <a href="about_us.php">ABOUT US</a>
 	  <a href="contact_us.php">CONTACT</a>-->
 	  <a href="regis1.html"></a>
-	    <a href="registration2.php">OWNER REGISTRATION</a>
-      <a href="registration.php">USER REGISTRATION</a>
+	    <a href="registration2.php">OWNER Registration</a>
+      <a href="registration.php">USER Registration</a>
   <div class="dropdown">
     <button class="dropbtn">LOGIN 
       <i class="fa fa-caret-down"></i>
@@ -142,24 +123,23 @@ body{
 	
 	
 	
-<!-- <body background="view.jpg"> -->
+<body background="a.jpg">
 
 
-</body><p></p><br>-->
+</body>
 
-<div></div>
-<!--<div class="slide">
-  <!-- <img class="mySlides" src="s1.jpg" style="width:700; height:450;"> -->
-  <img class="mySlides" src="view.jpg" style="width:1500; height:550;margin-top:-66px;">
-      <img class="mySlides" src="view.jpg" style="width:1500; height:550;margin-top:-66px;">
+<div class="slide">
+  <img class="mySlides" src="s1.jpg" style="width:700; height:450;">
+  <img class="mySlides" src="s2.jpg" style="width:700; height:450;">
+      <img class="mySlides" src="s3.jpg" style="width:700; height:450;">
   
-</div>-->
-<!--fetch("http://localhost:8082/Transportz/transportz", {
+</div>
+fetch("http://localhost:8082/Transportz/transportz", {
     method: 'POST',
     body: myStringData,
 }).then(response => {
     console.log(response);
-})-->
+})
 
  <script>   
 var myIndex = 0;

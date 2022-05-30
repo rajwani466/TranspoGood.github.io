@@ -9,30 +9,11 @@ include("connection.php");
 <title>
 LOGIN PAGE
 </title>
-<a href="index.html">HOME</a>
 </head>
 <style type="text/css">
-  body {
-    background-image: url(road7.webp);
-    max-width: 100%;
-    background-repeat: no-repeat;
-    /* height: 229px; */
-    background-size: 1525px;
-    opacity: 39.5;
-}
-      a{
-              text-decoration:none;
+  body{
+       background-color:powderblue;
       }
-      input[type="text"] {
-        border-radius: 8px;
-    background: none;
-    border: 2px solid black;
-}
-input[type="password"] {
-    border-radius: 8px;
-    background: none;
-    border: 2px solid black;
-}
    button {
   background-color: #4CAF50;
   color: white;
@@ -42,33 +23,25 @@ input[type="password"] {
   cursor: pointer;
   width: 10%;
    }
-   input[type="submit"] {
-    border-radius: 8px;
-    background: black;
-    color: white;
-}
-img {
-    margin-top: -59px;
-}
 .cancel{
         background-color:red;
         width:10%;
         }
 
 </style>
-<!-- <body background="g.jpg"> -->
+<body background="a.jpg">
 <form action="" method="POST">
 <a href="registration.php">click here for registration</a>
 <marquee>WELCOME TO LOGIN PAGE</marquee><center>
 <br/>
 <br/>
 <br/><br/>
-<img src="a11.png" alt="image not found"> 
-<p><b>USERNAME<b></p><br/>
+<img src="a.png" alt="image not found"> 
+<p>USERNAME</p><br/>
 <input type="text" type="text" name="name" value=""><br/><br/>
-<p><b>PASSWORD<b></p>
-<input type="password" name="password" value=""><br/><br/>
-<input type="submit" name="submit" value="LOGIN"><br/>
+<p>PASSWORD</p>
+<input type="text" name="password" value=""><br/><br/>
+LOGIN<input type="submit" name="submit" value="Login"><br/>
 <input type="checkbox">Remember me 
 <br/><br/>
 <button type="submit" class="cancel">cancel</button>

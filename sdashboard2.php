@@ -89,18 +89,6 @@ h1{
 		  color:white;
 		  
    }
-   button {
-    border-radius: 8px;
-    border: 2px solid black;
-    background: black;
-    color: white;
-}
-   select.vehicle {
-    border-radius: 8px;
-    border: 2px solid black;
-    background: black;
-    color: white;
-}
 </style>
 <div class="navbar">
   <a href="index.html">HOME</a>
@@ -115,7 +103,7 @@ h1{
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
    <div class="dropdown-content">
-      <a href="login1.php">ADMIN</a>
+      <a href="login1.php">OWNER</a>
       <a href="login.php">USER</a>
     </div>
 	</div>
@@ -145,7 +133,7 @@ else{
 	header('location:login.php');
 }
 
-$query = "SELECT * FROM user WHERE name='$userprofile'";
+$query = "SELECT * FROM owner WHERE name='$userprofile'";
 $data = mysqli_query($conn, $query);
 $result = mysqli_fetch_assoc($data);
 echo "welcome"  .$result['name'];
@@ -155,8 +143,8 @@ echo "welcome"  .$result['name'];
 	<th>NAME</th>
 	<th>SURNAME</th>
 	<th>NUMBER</th>
-	<!--<th>PICKUP</th>
-	<th>DROP</th>
+	<th>VEHICLE</th>
+	<!--<th>DROP</th>
 	<th>CATEGORY</th>
 	<th>AMOUNT</th>-->
 	
@@ -166,51 +154,47 @@ echo "<tr>
 				<td>".$result['name']."</td></br>
 				<td>".$result['surname']."</td></br>
 				<td>".$result['number']."</td>
-								
+				<td>".$result['vehicle']."</td>				
 			</tr><br><br><br><br><br><br><br>";
 
 ?>
 <html>
 
-</table><br><br><br>
+<!--</table><br><br><br>
 <center><h2>BOOKING</h2>
 <table border="2" align="center">
 <tr>
 <th>Pickup location:</th>
-<td><input type="text" name="name" value=""placeholder="Pickup location"></br></td>
+<td><input type="text" name="name" value=""></br></td>
 </tr>
 
 <tr>
 <th>Drop Location:</th>
-<td><input type="text" name="surname" value=""placeholder="Drop Location"></br></td>
+<td><input type="text" name="surname" value=""></br></td>
 </tr>
 <th>Date:</th>
-<td><input type="date" name="surname" value=""placeholder="date"></br></td>
+<td><input type="text" name="surname" value=""></br></td>
 </tr>
 <th>time:</th>
-<td><input type="time" name="surname" value=""placeholder="time"></br></td>
+<td><input type="text" name="surname" value=""></br></td>
 </tr>
+<center><SELECT>
 
-<center><SELECT class="vehicle">>
+<OPTION>Tata Ace
 
+<OPTION>Trollery
 
-<OPTION>Tata Ace 
-
-<OPTION>Trollery 
-
-<OPTION>Truck  
+<OPTION>Truck
 
 </SELECT><br><br><br>
-</div>
 <!--<center><input type="submit" name="submit" value="PAY" >-->
 
 <body background="a.jpg">
-<table align="center" border="1">
+<!--<table align="center" border="1">
 <center><h3>PAYMENT METHOD</h3></center>
-<form action="" method="post">
 <tr>
 <th>DEBIT CARD</th>
-<td><input type="radio" name="name"></td>
+<td><input type="radio" name="debitcard"></td>
 </tr>
 <tr>
 <th>VISA</th>
@@ -224,42 +208,20 @@ echo "<tr>
 <th>CASH</th>
 <td><input type="radio" name="cash"></td>
 </tr>
-</form>
-
 
 </table>
-<button  ondblclick="myalert()">
+<button ondblclick="myalert()">
       Pay Now
-    </button>
+    </button>-->
   
-    <script>
+   <!-- <script>
         function myalert() {
-            alert( "Payment done \n " +
+            alert("Payment done \n " +
                 "Booking the Confrimed" + 
                          "Thank you!");
         }
-    </script>
-<li
-<!--<br><br><input type="submit" name="submit" value=""></BR></BR>-->
+    </script>-->
+<!--<li
+<br><br><input type="" name="submit" value=""></BR></BR>-->
 </body>
 </html>
-<?php
-if(isset($_POST['submit']))
-{
-	$user= $_POST['name'];
-	$pwd= $_POST['password'];
-	$query="SELECT * FROM owner WHERE name='$user' && password='$pwd'";
-	
-	$data = mysqli_query($conn , $query);
-	$total = mysqli_num_rows($data);
-	if($total==1)
-	{
-		$_SESSION['user_name']=$user;
-		header('location:sdashboard2.php');
-	}
-	else
-	{
-		echo "<script type='text/javascript'>alert('incorrect password')</script>";
-	}
-}
-?>
