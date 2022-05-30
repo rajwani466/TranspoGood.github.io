@@ -13,12 +13,12 @@ h1{
       }
 	  .topnav {
   overflow: hidden;
-  background-color: #333;
+  background-color: black;
 }
 
 .navbar {
   overflow: hidden;
-  background-color: #333;
+  background-color: black;
 }
 
 .navbar a {
@@ -103,7 +103,7 @@ h1{
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
    <div class="dropdown-content">
-      <a href="login1.php">ADMIN</a>
+      <a href="login1.php">OWNER</a>
       <a href="login.php">USER</a>
     </div>
 	</div>
@@ -133,18 +133,18 @@ else{
 	header('location:login.php');
 }
 
-$query = "SELECT * FROM user WHERE name='$userprofile'";
+$query = "SELECT * FROM owner WHERE name='$userprofile'";
 $data = mysqli_query($conn, $query);
 $result = mysqli_fetch_assoc($data);
 echo "welcome"  .$result['name'];
 ?>
 <table border="2" align="center">
 <tr>
-	<th>NAME</th>
-	<th>SURNAME</th>
+	<th>USERNAME</th>
+	<th>FULL NAME</th>
 	<th>NUMBER</th>
-	<!--<th>PICKUP</th>
-	<th>DROP</th>
+	<th>VEHICLE</th>
+	<!--<th>DROP</th>
 	<th>CATEGORY</th>
 	<th>AMOUNT</th>-->
 	
@@ -154,13 +154,13 @@ echo "<tr>
 				<td>".$result['name']."</td></br>
 				<td>".$result['surname']."</td></br>
 				<td>".$result['number']."</td>
-								
+				<td>".$result['vehicle']."</td>				
 			</tr><br><br><br><br><br><br><br>";
 
 ?>
 <html>
 
-</table><br><br><br>
+<!--</table><br><br><br>
 <center><h2>BOOKING</h2>
 <table border="2" align="center">
 <tr>
@@ -180,17 +180,17 @@ echo "<tr>
 </tr>
 <center><SELECT>
 
-<OPTION>Tata Ace Rs 1000
+<OPTION>Tata Ace
 
-<OPTION>Trollery Rs 2000
+<OPTION>Trollery
 
-<OPTION>Truck  Rs 3000
+<OPTION>Truck
 
 </SELECT><br><br><br>
 <!--<center><input type="submit" name="submit" value="PAY" >-->
 
 <body background="a.jpg">
-<table align="center" border="1">
+<!--<table align="center" border="1">
 <center><h3>PAYMENT METHOD</h3></center>
 <tr>
 <th>DEBIT CARD</th>
@@ -212,16 +212,16 @@ echo "<tr>
 </table>
 <button ondblclick="myalert()">
       Pay Now
-    </button>
+    </button>-->
   
-    <script>
+   <!-- <script>
         function myalert() {
-            alert( "Payment done \n " +
+            alert("Payment done \n " +
                 "Booking the Confrimed" + 
                          "Thank you!");
         }
-    </script>
-<li
-<!--<br><br><input type="" name="submit" value=""></BR></BR>-->
+    </script>-->
+<!--<li
+<br><br><input type="" name="submit" value=""></BR></BR>-->
 </body>
 </html>
